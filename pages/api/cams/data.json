@@ -1,0 +1,44 @@
+{
+  "cams": [
+    {
+      "id" : 6187,
+      "title" : "St. Regis Princeville Cam",
+      "slug" : "st-regis-princeville-cam",
+      "url" : "http:\/\/www.seehawaiilive.com\/kauai\/princeville-resorts",
+      "image" : "\/cam-images\/st-regis-princeville-cam.jpg",
+      "description" : "This live cam is from the The St. Regis Princeville Resort. It is Java based tilt, pan and zoom webcam near Puupoa Beach.",
+      "latitude" : "",
+      "longitude" : "",
+      "address" : "",
+      "city" : "",
+      "postal_code" : "",
+      "country" : "US",
+      "state" : "HI",
+      "area" : "Kauai",
+      "sub_area" : "Princeville",
+      "is_visible" : true,
+      "flag" : false,
+      "is_down" : false
+    },
+    {
+      "id" : 6188,
+      "title" : "Westin Princeville Cam",
+      "slug" : "westin-princeville-cam",
+      "url" : "http:\/\/www.seehawaiilive.com\/wpv-cam.cfm",
+      "image" : "\/cam-images\/westin-princeville-cam.jpg",
+      "description" : "This is a live Java streaming pan,tilt and zoom live cam from the Westin Princeville Ocean Resort.",
+      "latitude" : "",
+      "longitude" : "",
+      "address" : "",
+      "city" : "",
+      "postal_code" : "",
+      "country" : "US",
+      "state" : "HI",
+      "area" : "Kauai",
+      "sub_area" : "Princeville",
+      "is_visible" : true,
+      "flag" : false,
+      "is_down" : false
+    }
+  ]
+}

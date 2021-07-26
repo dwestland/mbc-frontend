@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Header from './Header'
 import { useRouter } from 'next/router'
 import Footer from './Footer'
-// import Showcase from './Showcase'
+import Showcase from './Showcase'
 import styles from '../styles/Layout.module.scss'
 
 export default function Layout({ title, keywords, description, children }) {
@@ -15,6 +15,7 @@ export default function Layout({ title, keywords, description, children }) {
         <meta name='description' content={description} />
       </Head>
       <Header />
+      <Showcase />
       <div className={styles.container}>
         {children}
       </div>
@@ -22,11 +23,8 @@ export default function Layout({ title, keywords, description, children }) {
     </div>
   )
 }
-      // <Header />
 
-      // {router.pathname === '/' && <Showcase />}
-
-      // <div className={styles.container}>{children}</div>
+// {router.pathname === '/' && <Showcase />}
 
 Layout.defaultProps = {
   title: 'MyBeachCams.com - Webcams of Hawaii, Florida and California',

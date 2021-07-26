@@ -1,0 +1,8 @@
+GET http://localhost:3000/api/cams
+
+###
+
+GET http://localhost:3000/api/cams/st-regis-princeville-cam
+
+
+###

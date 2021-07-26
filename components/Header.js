@@ -3,8 +3,7 @@
 import Link from 'next/link'
 // import Search from './Search'
 // import AuthContext from '@/context/AuthContext'
-// import styles from '@/styles/Header.module.scss'
-import styles from '../styles/Header.module.scss'
+import styles from '@/styles/Header.module.scss'
 
 export default function Header() {
   // const { user, logout } = useContext(AuthContext)
@@ -76,4 +75,3 @@ export default function Header() {
     </header>
   )
 }
-
