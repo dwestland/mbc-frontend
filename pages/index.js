@@ -1,4 +1,5 @@
 import Layout from '@/components/Layout'
+import CamItem from '@/components/CamItem'
 import { API_URL } from '@/config/index'
 import Link from 'next/link'
 
@@ -10,22 +11,31 @@ export default function HomePage({ cams }) {
       description='Best Web Cams and Surf Cams in Hawaii, Florida and California and and local information about Maui, Los Angles, Miami, Oahu, San Francisco, Kauai and Fort Lauderdale'
     >
       <h1>Home</h1>
-      <Link href='/about'>About</Link>
-      <h2>Cams:</h2>
+      {cams.length === 0 && <h3>No cams to show</h3>}
+
+      {cams.map((cam) => (
+        <CamItem key={cam.id} cam={cam} />
+      ))}
+
+      {cams.length > 0 && (
+        <Link href='./cams'>
+          <a className='button'>
+            View All Cams
+          </a>
+        </Link>
+      )}
     </Layout>
   )
 }
 
 export async function getStaticProps() {
-// export async function getServerSideProps() {
   const res = await fetch(`${API_URL}/api/cams`)
   // const res = await fetch(`${API_URL}/events?_sort=date:ASC&_limit=3`)
   const cams = await res.json()
 
-  // console.log(cams)
 
   return {
-    props: {cams},
+    props: { cams: cams.slice(0, 3) },
     // revalidate: 10,
   }
 }
