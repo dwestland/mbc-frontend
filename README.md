@@ -1,7 +1,6 @@
 # mbc-frontend
 
-## Run dev
-
+**Run local development environment**
 ```
 npm run dev
 ```

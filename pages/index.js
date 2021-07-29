@@ -18,7 +18,7 @@ export default function HomePage({ cams }) {
       ))}
 
       {cams.length > 0 && (
-        <Link href='./cams'>
+        <Link href='/cams'>
           <a className='button'>
             View All Cams
           </a>
