@@ -1,7 +1,7 @@
 // import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
 // import { useContext } from 'react'
 import Link from 'next/link'
-// import Search from './Search'
+import Search from './Search'
 // import AuthContext from '@/context/AuthContext'
 import styles from '@/styles/Header.module.scss'
 
@@ -16,6 +16,8 @@ export default function Header() {
         </Link>
       </div>
 
+      <Search />
+      
       <nav>
         <ul>
           <li>
@@ -25,8 +27,9 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-{/*
-  <Search />
+
+
+      {/*
 
   <nav>
     <ul>
