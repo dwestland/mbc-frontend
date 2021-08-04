@@ -5,10 +5,7 @@ import Link from 'next/link'
 
 export default function CamsPage({ cams }) {
   return (
-    <Layout
-      title='MyBeachCams.com - Webcams of Hawaii, Florida and California'
-      description='Best Web Cams and Surf Cams in Hawaii, Florida and California and and local information about Maui, Los Angles, Miami, Oahu, San Francisco, Kauai and Fort Lauderdale'
-    >
+    <Layout>
       <h1>Cams</h1>
       {cams.length === 0 && <h3>No cams to show</h3>}
 
