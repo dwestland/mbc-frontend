@@ -4,7 +4,6 @@ import { API_URL } from '@/config/index'
 import Link from 'next/link'
 
 export default function HomePage({ cams }) {
-  console.log(cams)
   return (
     <Layout
       title='MyBeachCams.com - Webcams of Hawaii, Florida and California'
@@ -29,13 +28,13 @@ export default function HomePage({ cams }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/cams`)
-  // const res = await fetch(`${API_URL}/events?_sort=date:ASC&_limit=3`)
+  const res = await fetch(`${API_URL}/cams`)
+  // const res = await fetch(`${API_URL}/cams?_sort=date:ASC&_limit=3`)
   const cams = await res.json()
 
 
   return {
-    props: { cams: cams.slice(0, 3) },
+    props: { cams },
     // revalidate: 10,
   }
 }

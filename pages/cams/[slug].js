@@ -9,7 +9,9 @@ import { API_URL } from '@/config/index'
 import styles from '@/styles/Cam.module.scss'
 // import { useRouter } from 'next/router'
 
-export default function EventPage({ cam }) {
+export default function CamPage({ cam }) {
+  let imageUrl = cam.image.url ? API_URL + cam.image.url : '/images/no-image.jpg'
+
   // const router = useRouter()
   const deleteCam = (e) => {
     console.log('delete')
@@ -21,8 +23,9 @@ export default function EventPage({ cam }) {
     <Layout>
 
       <div className={styles.cam}>
+      {
         <div className={styles.controls}>
-          <Link href={`/events/edit/${cam.id}`}>
+          <Link href={`/cam/edit/${cam.id}`}>
             <a>
               <FaPencilAlt /> Edit Cam
             </a>
@@ -31,6 +34,7 @@ export default function EventPage({ cam }) {
             <FaTimes /> Delete Cam
           </a>
         </div>
+       }
         
         <span>
           {cam.title}
@@ -38,16 +42,14 @@ export default function EventPage({ cam }) {
         </span>
 
         <h1>{cam.title}</h1>
-        {cam.image && (
           <div className={styles.image}>
             <Image
-              src={cam.image}
+              src={imageUrl}
               width={480}
               height={300}
               alt={cam.title}
             />
           </div>
-        )}
 {/*
         <ToastContainer />
 */}
@@ -56,7 +58,7 @@ export default function EventPage({ cam }) {
         <p><strong>title</strong> {cam.title}</p>
         <p><strong>slug</strong> {cam.slug}</p>
         <p><strong>url</strong> {cam.url}</p>
-        <p><strong>image</strong> {cam.image}</p>
+
         <p><strong>description</strong> {cam.description}</p>
 
         <p><strong>country</strong> {cam.country}</p>
@@ -82,7 +84,7 @@ export default function EventPage({ cam }) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(`${API_URL}/api/cams`)
+  const res = await fetch(`${API_URL}/cams`)
   const cams = await res.json()
 
   const paths = cams.map((cam) => ({
@@ -96,7 +98,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const res = await fetch(`${API_URL}/api/cams/${slug}`)
+  const res = await fetch(`${API_URL}/cams?slug=${slug}`)
   const cams = await res.json()
 
   return {
@@ -108,10 +110,7 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 // export async function getServerSideProps({ query: { slug } }) {
-
-//   console.log(slug)
-
-//   const res = await fetch(`${API_URL}/api/cams/${slug}`)
+//   const res = await fetch(`${API_URL}/cams?slug=${slug}`)
 //   const cams = await res.json()
 
 //   return {

@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from '@/styles/CamItem.module.scss'
+import { API_URL } from '@/config/index'
 
 export default function CamItem({cam}) {
+  let imageUrl = cam.image.url ? API_URL + cam.image.url : '/images/no-image.jpg'
+
   return (
     <div className={styles.cam}>
       <div className={styles.img}>
@@ -12,10 +15,10 @@ export default function CamItem({cam}) {
           rel="noreferrer"
         >
           <Image
-            src={cam.image ? cam.image : '/cam-images/no-image.jpg'}
+            src={imageUrl}
             width={170}
             height={100}
-            alt={cam.title ? cam.title : 'No image available'}
+            alt={cam.title}
           />
         </a>
       </div>

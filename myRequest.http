@@ -2,7 +2,23 @@ GET http://localhost:3000/api/cams
 
 ###
 
-GET http://localhost:3000/api/cams/st-regis-princeville-cam
+GET http://localhost:3000/cams/westin-princeville-cam
 
 
 ###
+
+GET http://localhost:1337/cams?slug=st-regis-princeville-cam
+
+###
+
+GET http://localhost:1337/cams?id=2
+
+
+###
+
+GET http://localhost:1337/cams?id=1
+
+
+###
+GET http://localhost:1337/cams
+
