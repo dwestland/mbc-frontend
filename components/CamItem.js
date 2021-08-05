@@ -4,7 +4,7 @@ import styles from '@/styles/CamItem.module.scss'
 import { API_URL } from '@/config/index'
 
 export default function CamItem({cam}) {
-  let imageUrl = cam.image.url ? API_URL + cam.image.url : '/images/no-image.jpg'
+  let imageUrl = cam.image ? API_URL + cam.image.url : '/images/no-image.jpg'
 
   return (
     <div className={styles.cam}>

@@ -10,14 +10,11 @@ import styles from '@/styles/Cam.module.scss'
 // import { useRouter } from 'next/router'
 
 export default function CamPage({ cam }) {
-  let imageUrl = cam.image.url ? API_URL + cam.image.url : '/images/no-image.jpg'
+  let imageUrl = cam.image ? API_URL + cam.image.url : '/images/no-image.jpg'
 
-  // const router = useRouter()
   const deleteCam = (e) => {
     console.log('delete')
   }
-
-
 
   return (
     <Layout>
@@ -58,21 +55,24 @@ export default function CamPage({ cam }) {
         <p><strong>title</strong> {cam.title}</p>
         <p><strong>slug</strong> {cam.slug}</p>
         <p><strong>url</strong> {cam.url}</p>
-
         <p><strong>description</strong> {cam.description}</p>
 
         <p><strong>country</strong> {cam.country}</p>
         <p><strong>state</strong> {cam.state}</p>
         <p><strong>area</strong> {cam.area}</p>
         <p><strong>sub_area</strong> {cam.sub_area}</p>
+
         <p><strong>is_visible</strong> {cam.is_visible ? 'true' : 'false'}</p>
         <p><strong>flag</strong> {cam.flag ? 'true' : 'false'}</p>
         <p><strong>is_down</strong> {cam.is_down ? 'true' : 'false'}</p>
-        <p><strong>latitude</strong> {cam.latitude}</p>
-        <p><strong>longitude</strong> {cam.longitude}</p>
-        <p><strong>address</strong> {cam.address}</p>
-        <p><strong>city</strong> {cam.city}</p>
-        <p><strong>postal_code</strong> {cam.postal_code}</p>
+
+{/*
+  <p><strong>latitude</strong> {cam.latitude}</p>
+  <p><strong>longitude</strong> {cam.longitude}</p>
+  <p><strong>address</strong> {cam.address}</p>
+  <p><strong>city</strong> {cam.city}</p>
+  <p><strong>postal_code</strong> {cam.postal_code}</p>
+*/}
 
         <Link href='/cams'>
           <a className={styles.back}>{'<'} Go Back</a>

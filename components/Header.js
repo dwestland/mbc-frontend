@@ -25,10 +25,13 @@ export default function Header() {
               <a>Cams</a>
             </Link>
           </li>
+          <li>
+            <Link href='/cams/add'>
+              <a>Add Cam</a>
+            </Link>
+          </li>
         </ul>
       </nav>
-
-
       {/*
 
   <nav>
@@ -41,11 +44,7 @@ export default function Header() {
       {user ? (
         // If logged in
         <>
-          <li>
-            <Link href='/events/add'>
-              <a>Add Event</a>
-            </Link>
-          </li>
+
           <li>
             <Link href='/account/dashboard'>
               <a>Dashboard</a>
