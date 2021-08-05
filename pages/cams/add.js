@@ -18,6 +18,7 @@ export default function AddCamPage({ token }) {
     area: '',
     sub_area: '',
   })
+
   const router = useRouter()
 
   const handleSubmit = async (e) => {
