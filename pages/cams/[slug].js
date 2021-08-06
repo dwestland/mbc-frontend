@@ -1,5 +1,5 @@
-// import { ToastContainer, toast } from 'react-toastify'
-// import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { FaPencilAlt, FaTimes } from 'react-icons/fa'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -7,20 +7,31 @@ import Layout from '@/components/Layout'
 // import EventMap from '@/components/EventMap'
 import { API_URL } from '@/config/index'
 import styles from '@/styles/Cam.module.scss'
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 
 export default function CamPage({ cam }) {
+  const router = useRouter()
   let imageUrl = cam.image ? API_URL + cam.image.url : '/images/no-image.jpg'
 
-  const deleteCam = (e) => {
-    console.log('delete')
+  const deleteCam = async (e) => {
+    if(confirm('Are you sure?')) {
+      const res = await fetch(`${API_URL}/cams/${cam.id}`, {
+        method: 'DELETE'
+      })
+
+      const data = await res.json()
+
+      if(!res.ok) {
+        toast.error(data.message)
+      } else {
+        router.push('/cams')
+      }
+    }
   }
 
   return (
     <Layout>
-
       <div className={styles.cam}>
-      {
         <div className={styles.controls}>
           <Link href={`/cam/edit/${cam.id}`}>
             <a>
@@ -31,25 +42,20 @@ export default function CamPage({ cam }) {
             <FaTimes /> Delete Cam
           </a>
         </div>
-       }
-        
         <span>
           {cam.title}
           {cam.description}
         </span>
-
         <h1>{cam.title}</h1>
-          <div className={styles.image}>
-            <Image
-              src={imageUrl}
-              width={480}
-              height={300}
-              alt={cam.title}
-            />
-          </div>
-{/*
         <ToastContainer />
-*/}
+        <div className={styles.image}>
+          <Image
+            src={imageUrl}
+            width={480}
+            height={300}
+            alt={cam.title}
+          />
+        </div>
 
         <p><strong>id</strong> {cam.id}</p>
         <p><strong>title</strong> {cam.title}</p>
