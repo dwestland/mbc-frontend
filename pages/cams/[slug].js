@@ -33,7 +33,7 @@ export default function CamPage({ cam }) {
     <Layout>
       <div className={styles.cam}>
         <div className={styles.controls}>
-          <Link href={`/cam/edit/${cam.id}`}>
+          <Link href={`/cams/edit/${cam.id}`}>
             <a>
               <FaPencilAlt /> Edit Cam
             </a>
@@ -42,11 +42,8 @@ export default function CamPage({ cam }) {
             <FaTimes /> Delete Cam
           </a>
         </div>
-        <span>
-          {cam.title}
-          {cam.description}
-        </span>
-        <h1>{cam.title}</h1>
+        <h1>Cam Details Page</h1>
+        <h2>{cam.title}</h2>
         <ToastContainer />
         <div className={styles.image}>
           <Image
