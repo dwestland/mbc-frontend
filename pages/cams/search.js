@@ -27,6 +27,9 @@ export async function getServerSideProps({query: {term}}) {
       _or: [
         {title_contains: term},
         {description_contains: term},
+        {state_contains: term},
+        {area_contains: term},
+        {sub_area_contains: term},
       ]
     }
   })

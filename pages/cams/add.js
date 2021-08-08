@@ -62,7 +62,7 @@ export default function AddCamPage({ token }) {
 
   return (
     <Layout title='Add New Cam'>
-      <Link href='/events'>Go Back</Link>
+      <Link href='/cams'>Go Back</Link>
       <h1>Add Cam</h1>
       <ToastContainer />
       <form onSubmit={handleSubmit} className={styles.form}>

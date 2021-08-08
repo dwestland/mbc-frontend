@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
+import Modal from '@/components/Modal'
 import { API_URL } from '@/config/index'
 import styles from '@/styles/Form.module.scss'
 
@@ -22,6 +23,8 @@ export default function EditCamPage({ cam }) {
     area: cam.area,
     sub_area: cam.sub_area,
   })
+
+  const [showModal, setShowModal] = useState(false)
 
   const router = useRouter()
 
@@ -66,7 +69,7 @@ export default function EditCamPage({ cam }) {
 
   return (
     <Layout title='Add New Cam'>
-      <Link href='/events'>Go Back</Link>
+      <Link href='/cams'>Go Back</Link>
       <h1>Edit Cam</h1>
       <h2>{cam.title}</h2>
       <ToastContainer />
@@ -155,10 +158,17 @@ export default function EditCamPage({ cam }) {
         alt={cam.title}
       />
       <div>
-        <button className="btn-secondary btn-icon">
+        <button
+          onClick={() => setShowModal(true)}
+          className="btn-secondary btn-icon"
+        >
           <FaImage /> Set Image
         </button>
       </div>
+
+      <Modal show={showModal} onClose={() => setShowModal(false)}>
+        IMAGE UPLOAD
+      </Modal>
     </Layout>
   )
 }
