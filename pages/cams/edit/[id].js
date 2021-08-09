@@ -8,12 +8,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
 import Modal from '@/components/Modal'
+import ImageUpload from '@/components/ImageUpload'
 import { API_URL } from '@/config/index'
 import styles from '@/styles/Form.module.scss'
 
 export default function EditCamPage({ cam }) {
-  let imageUrl = cam.image ? API_URL + cam.image.url : '/images/no-image.jpg'
-
   const [values, setValues] = useState({
     title: cam.title,
     url: cam.url,
@@ -23,6 +22,11 @@ export default function EditCamPage({ cam }) {
     area: cam.area,
     sub_area: cam.sub_area,
   })
+  const [imagePreview, setImagePreview] = useState(
+    // cam.image ? cam.image.formats.thumbnail.url : null
+  )
+
+  let imageUrl = cam.image ? API_URL + cam.image.url : '/images/no-image.jpg'
 
   const [showModal, setShowModal] = useState(false)
 
@@ -30,7 +34,6 @@ export default function EditCamPage({ cam }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(values)
     
     // Validation
     const hasEmptyFields = Object.values(values).some(
@@ -67,11 +70,27 @@ export default function EditCamPage({ cam }) {
     setValues({ ...values, [name]: value })
   }
 
+  const imageUploaded = async (e) => {
+    const res = await fetch(`${API_URL}/cams/${cam.id}`)
+    const data = await res.json()
+
+    imageUrl = API_URL + "x" + cam.image.url
+    setImagePreview(imageUrl)
+    // TODO: Image not refreshing after upload
+
+    //   setImagePreview(data.image.formats.thumbnail.url)
+    console.log('%c data.image.formats.thumbnail.url ', 'background: green; color: white', data.image.formats.thumbnail.url)
+    console.log('%c data.image.url ', 'background: green; color: white', data.image.url)
+
+
+    setShowModal(false)
+  }
+
   return (
     <Layout title='Add New Cam'>
       <Link href='/cams'>Go Back</Link>
       <h1>Edit Cam</h1>
-      <h2>{cam.title}</h2>
+      <h2>{cam.title} - ID# {cam.id}</h2>
       <ToastContainer />
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.grid}>
@@ -136,7 +155,6 @@ export default function EditCamPage({ cam }) {
             />
           </div>
         </div>
-
         <div>
           <label htmlFor='description'>Cam Description</label>
           <textarea
@@ -147,7 +165,6 @@ export default function EditCamPage({ cam }) {
             onChange={handleInputChange}
           ></textarea>
         </div>
-
         <input type='submit' value='Update Cam' className='btn' />
       </form>
       <h3>Cam Image</h3>
@@ -165,9 +182,10 @@ export default function EditCamPage({ cam }) {
           <FaImage /> Set Image
         </button>
       </div>
-
       <Modal show={showModal} onClose={() => setShowModal(false)}>
-        IMAGE UPLOAD
+        <ImageUpload
+          camId={cam.id}
+          imageUploaded={imageUploaded} />
       </Modal>
     </Layout>
   )

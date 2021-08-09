@@ -4,6 +4,7 @@ import { API_URL } from '@/config/index'
 import Link from 'next/link'
 
 export default function HomePage({ cams }) {
+  console.log('%c cams ', 'background: red; color: white', cams)
   return (
     <Layout
       title='MyBeachCams.com - Webcams of Hawaii, Florida and California'

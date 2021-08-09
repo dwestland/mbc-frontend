@@ -9,6 +9,14 @@
   position: relative;
   text-align: center;
   width: 100%;
+
+  h1, h2, h3 {
+    text-shadow: 1px 1px 1px rgb(75, 75, 75);
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
 }
 
 .showcase::after {
@@ -23,8 +31,4 @@
 
 .showcase * {
   z-index: 20;
-}
-
-.showcase h1 {
-  margin-bottom: 0;
 }

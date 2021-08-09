@@ -7,7 +7,6 @@ import styles from '@/styles/Modal.module.scss'
 // https://devrecipes.net/modal-component-with-next-js/
 
 export default function Modal({ show, onClose, children, title }) {
-  console.log('%c show ', 'background: red; color: white', show)
   const [isBrowser, setIsBrowser] = useState(false)
 
   useEffect(() => setIsBrowser(true))

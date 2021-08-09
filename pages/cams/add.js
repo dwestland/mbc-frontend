@@ -23,7 +23,6 @@ export default function AddCamPage({ token }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(values)
     
     // Validation
     const hasEmptyFields = Object.values(values).some(

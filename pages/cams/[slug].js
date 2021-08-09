@@ -4,7 +4,6 @@ import { FaPencilAlt, FaTimes } from 'react-icons/fa'
 import Link from 'next/link'
 import Image from 'next/image'
 import Layout from '@/components/Layout'
-// import EventMap from '@/components/EventMap'
 import { API_URL } from '@/config/index'
 import styles from '@/styles/Cam.module.scss'
 import { useRouter } from 'next/router'
@@ -14,7 +13,7 @@ export default function CamPage({ cam }) {
   let imageUrl = cam.image ? API_URL + cam.image.url : '/images/no-image.jpg'
 
   const deleteCam = async (e) => {
-    if(confirm('Are you sure?')) {
+    if(confirm(`Are you sure you want to delete ${cam.title}?`)) {
       const res = await fetch(`${API_URL}/cams/${cam.id}`, {
         method: 'DELETE'
       })
