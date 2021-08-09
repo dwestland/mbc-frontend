@@ -74,7 +74,7 @@ export default function EditCamPage({ cam }) {
     const res = await fetch(`${API_URL}/cams/${cam.id}`)
     const data = await res.json()
 
-    imageUrl = API_URL + "x" + cam.image.url
+    imageUrl = API_URL + cam.image.url
     setImagePreview(imageUrl)
     // TODO: Image not refreshing after upload
 
