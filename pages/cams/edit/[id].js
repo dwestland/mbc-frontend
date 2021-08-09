@@ -90,7 +90,9 @@ export default function EditCamPage({ cam }) {
     <Layout title='Add New Cam'>
       <Link href='/cams'>Go Back</Link>
       <h1>Edit Cam</h1>
-      <h2>{cam.title} - ID# {cam.id}</h2>
+      <h2>{cam.title}</h2>
+      <h5>ID# {cam.id} <strong>slug:</strong> {cam.slug}</h5>
+
       <ToastContainer />
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.grid}>
