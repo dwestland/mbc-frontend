@@ -13,10 +13,11 @@ export default function SearchPage({ cams }) {
       <h1>Search Results for {router.query.term}</h1>
       <Link href='/cams'>Go Back</Link>
       {cams.length === 0 && <h3>No cams to show</h3>}
-
-      {cams.map((cam) => (
-        <CamItem key={cam.id} cam={cam} />
-      ))}
+      <div className='cam-container'>
+        {cams.map((cam) => (
+          <CamItem key={cam.id} cam={cam} />
+        ))}
+      </div>
     </Layout>
   )
 }

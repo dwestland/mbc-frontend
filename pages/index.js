@@ -4,7 +4,7 @@ import { API_URL } from '@/config/index'
 import Link from 'next/link'
 
 export default function HomePage({ cams }) {
-  console.log('%c cams ', 'background: red; color: white', cams)
+  // console.log('%c cams ', 'background: red; color: white', cams)
   return (
     <Layout
       title='MyBeachCams.com - Webcams of Hawaii, Florida and California'
@@ -12,10 +12,11 @@ export default function HomePage({ cams }) {
     >
       <h1>Home</h1>
       {cams.length === 0 && <h3>No cams to show</h3>}
-
-      {cams.map((cam) => (
-        <CamItem key={cam.id} cam={cam} />
-      ))}
+      <div className='cam-container'>
+        {cams.map((cam) => (
+          <CamItem key={cam.id} cam={cam} />
+        ))}
+      </div>
 
       {cams.length > 0 && (
         <Link href='/cams'>

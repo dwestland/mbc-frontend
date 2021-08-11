@@ -27,7 +27,7 @@ export default function ImageUpload({ camId, imageUploaded, token }) {
   }
 
   const handleFileChange = (e) => {
-    console.log('%c e.target.files[0] ', 'background: red; color: white', e.target.files[0])
+    // console.log('%c e.target.files[0] ', 'background: red; color: white', e.target.files[0])
     setImage(e.target.files[0])
   }
 
