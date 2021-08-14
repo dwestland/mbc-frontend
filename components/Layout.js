@@ -1,9 +1,12 @@
 import Head from 'next/head'
+import Navbar from './Navbar'
 import Header from './Header'
 import { useRouter } from 'next/router'
 import Footer from './Footer'
 import Showcase from './Showcase'
 import styles from '../styles/Layout.module.scss'
+import Breadcrumbs from 'nextjs-breadcrumbs'
+import 'nextjs-breadcrumbs/dist/index.css'
 
 export default function Layout({ title, keywords, description, children }) {
   const router = useRouter()
@@ -14,12 +17,20 @@ export default function Layout({ title, keywords, description, children }) {
         <title>{title}</title>
         <meta name='description' content={description} />
       </Head>
-      <Header />
-      <Showcase />
-      <div className={styles.container}>
-        {children}
+      <div className={styles.body}>
+
+        <Navbar  />
+        <Header />
+        <Showcase />
+        <Breadcrumbs useDefaultStyle rootLabel='Home' />
+
+        <div className={styles.container}>
+          {children}
+        </div>
+
+        <Footer />
+
       </div>
-      <Footer />
     </div>
   )
 }
