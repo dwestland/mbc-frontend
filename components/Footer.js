@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <p>Copyright &copy; 2005-{year} MyBeachCams.com</p>
       <p>
-        <Link href='/about'>About</Link>
+        <Link href='/about'>About</Link> &nbsp;&nbsp;&nbsp; <Link href='/contact'>Contact Us</Link>
       </p>
     </footer>
   )
