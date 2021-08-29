@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import { Button } from './Button';
-// import { Link } from 'react-router-dom';
-// import './Navbar.css';
 import Dropdown from './Dropdown'
+import HawaiiDropdown from './HawaiiDropdown'
 
 
 export default function Navbar() {
 
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [hawaiiDropdown, setHawaiiDropdown] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -49,6 +49,7 @@ export default function Navbar() {
               <a className='nav-links' onClick={closeMobileMenu}>Home</a>
             </Link>
           </li>
+
           <li
             className='nav-item'
             onMouseEnter={onMouseEnter}
@@ -60,14 +61,21 @@ export default function Navbar() {
               </a>
             </Link>
             {dropdown && <Dropdown />}
+            
           </li>
-          <li className='nav-item'>
-            <Link href={'/products'}>
+
+          <li className='nav-item'
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
+            <Link href={'/hawaii'}>
               <a className='nav-links' onClick={closeMobileMenu}>
-                Products
+                Hawaii
               </a>
             </Link>
+            {hawaiiDropdown && <HawaiiDropdown />}
           </li>
+
           <li className='nav-item'>
             <Link href={'/contactUs'}>
               <a className='nav-links' onClick={closeMobileMenu}>

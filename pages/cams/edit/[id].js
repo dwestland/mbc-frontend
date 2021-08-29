@@ -79,8 +79,8 @@ export default function EditCamPage({ cam }) {
     // TODO: Image not refreshing after upload
 
     //   setImagePreview(data.image.formats.thumbnail.url)
-    console.log('%c data.image.formats.thumbnail.url ', 'background: green; color: white', data.image.formats.thumbnail.url)
-    console.log('%c data.image.url ', 'background: green; color: white', data.image.url)
+    // console.log('%c data.image.formats.thumbnail.url ', 'background: green; color: white', data.image.formats.thumbnail.url)
+    // console.log('%c data.image.url ', 'background: green; color: white', data.image.url)
 
 
     setShowModal(false)
