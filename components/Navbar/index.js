@@ -1,100 +1,45 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { Button } from './Button';
-import Dropdown from './Dropdown'
-import HawaiiDropdown from './HawaiiDropdown'
-
 
 export default function Navbar() {
 
-  const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
-  const [hawaiiDropdown, setHawaiiDropdown] = useState(false);
-
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
-
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
-
   return (
-    <div className="dropdown">
+    <div className="navbar">
+      <ul>
+        <li>
+          Hawaii Beach Cams
+          <ul>
+            <li><Link href="/hawaii/"><a>Hawaii</a></Link></li>
+            <li><Link href="/hawaii/kauai/"><a>Kauai</a></Link></li>
+            <li><Link href="/hawaii/oahu/"><a>Oahu</a></Link></li>
+            <li><Link href="/hawaii/maui/"><a>Maui</a></Link></li>
+            <li><Link href="/hawaii/bigisland/"><a>Big Island</a></Link></li>
+          </ul>
 
-      <nav className='navbar'>
-
-        <Link href={'/'}>
-          <a className='navbar-logo' onClick={closeMobileMenu}>EPIC Icon</a>
-        </Link>
-
-        <div className='menu-icon' onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-        </div>
-
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-          <li className='nav-item'>
-            <Link href={'/'}>
-              <a className='nav-links' onClick={closeMobileMenu}>Home</a>
-            </Link>
-          </li>
-
-          <li
-            className='nav-item'
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
-            <Link href={'/services'}>
-              <a className='nav-links' onClick={closeMobileMenu}>
-                Services ^
-              </a>
-            </Link>
-            {dropdown && <Dropdown />}
-            
-          </li>
-
-          <li className='nav-item'
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
-          >
-            <Link href={'/hawaii'}>
-              <a className='nav-links' onClick={closeMobileMenu}>
-                Hawaii
-              </a>
-            </Link>
-            {hawaiiDropdown && <HawaiiDropdown />}
-          </li>
-
-          <li className='nav-item'>
-            <Link href={'/contactUs'}>
-              <a className='nav-links' onClick={closeMobileMenu}>
-                Contact Us
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href={'/signUp'}>
-              <a className='nav-links-mobile' onClick={closeMobileMenu}>
-                Sign Up
-              </a>
-            </Link>
-          </li>
-        </ul>
-
-        <Button />
-
-      </nav>
+        </li>
+        <li>
+          California Beach Cams
+          <ul>
+            <li><Link href="/california/"><a>California</a></Link></li>
+            <li><Link href="/california/san-diego/"><a>San Diego</a></Link></li>
+            <li><Link href="/california/los-angeles/"><a>Los Angeles</a></Link></li>
+            <li><Link href="/california/central-coast/"><a>Central Coast</a></Link></li>
+            <li><Link href="/california/san-francisco/"><a>San Francisco</a></Link></li>
+          </ul>
+        </li>
+        <li>
+          Florida Beach Cams
+          <ul>
+            <li><Link href="/florida/"><a>Florida</a></Link></li>
+            <li><Link href="/florida/panhandle/"><a>Pan Handel</a></Link></li>
+            <li><Link href="/florida/northeast/"><a>Northeast</a></Link></li>
+            <li><Link href="/florida/east-central/"><a>East Central</a></Link></li>
+            <li><Link href="/florida/miami/"><a>Miami Beach</a></Link></li>
+            <li><Link href="/florida/southeast-keys/"><a>Southeast &amp; The Keys</a></Link></li>
+            <li><Link href="/florida/gulf-coast/"><a>Gulf Coast</a></Link></li>
+          </ul>
+        </li>
+      </ul>
     </div>
-  );
+  )
 }
