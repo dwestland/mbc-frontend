@@ -6,12 +6,12 @@ export default function Navbar() {
   return (
     <div className="navbar">
       <ul>
-        <li className="dropdown dropdown-6">
+        <li className="dropdown">
           <Link href="/"><a>Home</a></Link>
         </li>
-        <li className="dropdown dropdown-6">
+        <li className="dropdown">
           Hawaii Beach Cams
-          <ul className="dropdown_menu dropdown_menu--animated dropdown_menu-6">
+          <ul className="dropdown_menu dropdown_menu--animated">
             <li><Link href="/hawaii/"><a>Hawaii</a></Link></li>
             <li><Link href="/hawaii/kauai/"><a>Kauai</a></Link></li>
             <li><Link href="/hawaii/oahu/"><a>Oahu</a></Link></li>
@@ -20,9 +20,9 @@ export default function Navbar() {
           </ul>
 
         </li>
-        <li className="dropdown dropdown-6">
+        <li className="dropdown">
           California Beach Cams
-          <ul className="dropdown_menu dropdown_menu--animated dropdown_menu-6">
+          <ul className="dropdown_menu dropdown_menu--animated">
             <li><Link href="/california/"><a>California</a></Link></li>
             <li><Link href="/california/san-diego/"><a>San Diego</a></Link></li>
             <li><Link href="/california/los-angeles/"><a>Los Angeles</a></Link></li>
@@ -30,9 +30,9 @@ export default function Navbar() {
             <li><Link href="/california/san-francisco/"><a>San Francisco</a></Link></li>
           </ul>
         </li>
-        <li className="dropdown dropdown-6">
+        <li className="dropdown">
           Florida Beach Cams
-          <ul className="dropdown_menu dropdown_menu--animated dropdown_menu-6">
+          <ul className="dropdown_menu dropdown_menu--animated">
             <li><Link href="/florida/"><a>Florida</a></Link></li>
             <li><Link href="/florida/panhandle/"><a>Pan Handel</a></Link></li>
             <li><Link href="/florida/northeast/"><a>Northeast</a></Link></li>
