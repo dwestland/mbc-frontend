@@ -29,10 +29,10 @@
       // display: inline-block;
       float: left;
       // display: inline-block
-      width: 200px;
+      // width: 200px;
       cursor: default;
       a {
-        width: 200px;
+        // width: 200px;
       }
     }
 
@@ -51,7 +51,7 @@
     .dropdown_menu li a {
       cursor: pointer;
       display:inline-block;
-      width: 250px;
+      width: 200px;
 
       // padding: 20px;
     }
@@ -184,6 +184,11 @@
 
     nav {
 
+      .dropdown_menu {
+        left: 50vw;
+        top: -20px;
+      }
+
       .logo {
         // float: right;
         // width: 150px; 
@@ -194,14 +199,14 @@
       }
       
       ul ul {
-        bottom: 0;
-        left: 33vw;
-        width: 33vw;
+        // bottom: 0;
+        // left: 50vw;
+        // width: 33vw;
       }
 
       ul ul ul {
-        left: 33vw;
-        width: 34vw;
+        // left: 33vw;
+        // width: 34vw;
       }
 
       li {
@@ -210,8 +215,8 @@
 
       /* Triggers drop-down */
       ul li:hover > ul {
-        display:inherit;
-        overflow: initial;
+        // display:inherit;
+        // overflow: initial;
       }
 
       li a {
@@ -220,19 +225,19 @@
 
       /* Arrow icon pointing right */
       li > a:after {
-        content:  ' \25b8';
-        font-size: 1.4em;
-        margin-left: 3px;
+        // content:  ' \25b8';
+        // font-size: 1.4em;
+        // margin-left: 3px;
       }
 
       .menu {
-        bottom: 58px;
+        top: 60px;
         clear: both;
         float: left;
         max-height: 0;
         overflow: visible;
         position: absolute;
-        width: 33vw;
+        width: 50vw;
       }
 
       /* menu btn */
@@ -262,10 +267,13 @@
       .menu-icon {
         cursor: pointer;
         display: block;
-        // padding: 28px 20px;
+        padding: 10px 10px;
         position: relative;
         user-select: none;
         float: right;
+
+        // top: 10px;
+        // right: 10px;
 
         .navicon {
           background: red;
