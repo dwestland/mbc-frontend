@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Navbar from './Navbar'
-import Header from './Header'
+// import Header from './Header'
 import { useRouter } from 'next/router'
 import Footer from './Footer'
 import Showcase from './Showcase'
 import styles from '../styles/Layout.module.scss'
-import Breadcrumbs from 'nextjs-breadcrumbs'
+// import Breadcrumbs from 'nextjs-breadcrumbs'
 import 'nextjs-breadcrumbs/dist/index.css'
 
 export default function Layout({ title, keywords, description, children }) {
@@ -20,11 +20,15 @@ export default function Layout({ title, keywords, description, children }) {
       <div className={styles.body}>
 
         <Navbar  />
-        <Header />
+        {/** TODO: Convert to Admin menu:
+          <Header />
+         */}
+         
         <Showcase />
-        <Breadcrumbs useDefaultStyle rootLabel='Home' />
-
         <div className={styles.container}>
+         {/**
+          <Breadcrumbs useDefaultStyle rootLabel='Home' />
+         */}
           {children}
         </div>
 
