@@ -1,44 +1,46 @@
 .showcase {
-  align-items: center;
+  // TODO: More text shadow
+
   background: #000 url('/images/mybeachcams.jpg') no-repeat center center / cover;
+  margin-top: 60px;
+  text-shadow: 1px 1px 1px rgb(75, 75, 75);
+}
+
+.container {
+  border: 1px solid green;
   color: #fff;
   display: flex;
   flex-direction: column;
-  height: 300px;
+  font-size: 4.0rem;
+  font-weight: 300;
   justify-content: center;
-  position: relative;
+  letter-spacing: -.1rem;
+  line-height: 1.2;
+  margin: auto;
+  max-width: 1200px;
+  min-height: 120px;
+  padding: 0 10px;
   text-align: center;
-  width: 100%;
-
-  h1, h2, h3 {
-    text-shadow: 1px 1px 1px rgb(75, 75, 75);
-  }
-
-  h1 {
-    margin-bottom: 0;
-  }
 }
 
-.showcase::after {
-  background-color: rgba(0, 0, 0, 0.1);
-  content: '';
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
+.logo {
+  font-size: 50px;
+  margin-top: -24px;
 }
 
-.showcase * {
-  z-index: 20;
+.subHeading {
+  font-size: 32px;
+  margin: 5px 0 0px;
 }
 
 @media (max-width: 600px) {
-  .heading {
-    font-size: 2.4rem;
-    line-height: 0.25;
+  .logo {
+    font-size: 40px;
+    line-height: 0.9;
+    margin-top: 2px;
   }
-  .subheading {
-    font-size: 2rem;
+  .subHeading {
+    font-size: 26px;
+    margin: 8px 0 8px;
   }
 }
