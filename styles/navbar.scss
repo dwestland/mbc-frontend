@@ -1,30 +1,31 @@
 .navbar {
   background-color: pink;
   box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
-  font-size: 16px;
+  margin: 0;
+  padding: 0;
   position: fixed;
+  text-decoration: none;
   width: 100%;
   z-index: 30;
 
   a {
     color: white;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
-    height: 46px;
     justify-content: center;
     text-decoration: none;
   }
 
   nav {
     background: lightgray;
-    border: 1px solid green;
     height: 100%;
     margin: 0 auto;
     max-width: 1200px;
 
     .logo {
       align-items: center;
-      border: 1px solid blue;
+      background: lightblue;
       display: flex;
       float: left;
       font-size: 16px;
@@ -32,6 +33,10 @@
       line-height: .9;
       text-align: center;
       width: 90px;
+
+      a {
+        height: 38px;
+      }
     }
 
     .menu-btn {
@@ -39,12 +44,22 @@
     }
 
     .menu-wrapper {
+      line-height: 1.2;
+      
       a {
         color: white;
       }
   
       li {
-        padding: 10px 5px
+
+        a {
+          padding: 5px 5px 5px 10px;
+          width: 200px;
+        }
+
+        span {
+          padding: 10px 5px;
+        }
       }
   
       ul {
@@ -57,20 +72,8 @@
       ul li ul {
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(104, 76, 76, 0.3);
         border-radius: 5px;
-        // width: 200px;
       }
 
-      // ul li ul li {
-      //   padding: 0;
-      //   margin: 0;
-      // }
-
-      .dropdown_menu li a {
-        cursor: pointer;
-        display:inline-block;
-        width: 200px;
-      }
-  
       .dropdown {
         background: var(--seafoam);
         color: #fff;
@@ -84,56 +87,52 @@
         background: var(--dark-seafoam);
       }
   
-      .dropdown:hover .dropdown_menu li {
+      .dropdown:hover .dropdown-menu li {
         display: block;
-        width: 200px;
       }
 
-      .dropdown:hover .dropdown_menu li:first-child {
+      .dropdown:hover .dropdown-menu li:first-child {
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
-        margin-top: 10px;
+        margin-top: 7px;
       }
 
-      .dropdown:hover .dropdown_menu li:last-child {
+      .dropdown:hover .dropdown-menu li:last-child {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
       }
 
-      .dropdown_menu {
+      .dropdown-menu {
         animation: growDown 300ms ease-in-out forwards;
         left: 0;
-        // perspective: 1000px;
         position: absolute;
         top: 100%;
         transform-origin: top center;
         z-index: -1;
       }
   
-      .dropdown_menu li {
+      .dropdown-menu li {
         background-color: var(--light-seafoam);
         color: #fff;
         display: none;
-        font-size: 16px;
         opacity: 0;
       }
       
-      .dropdown_menu li:hover {
+      .dropdown-menu li:hover {
         background-color: var(--seafoam);
       }
       
-      .dropdown:hover .dropdown_menu--animated {
+      .dropdown:hover .dropdown-menu--animated {
         display: block;
       }
       
-      .dropdown_menu--animated {
+      .dropdown-menu--animated {
         display: none;
       }
       
-      .dropdown_menu--animated li {
+      .dropdown-menu--animated li {
         display: block;
         opacity: 1;
-        padding-left: 15px;
       }
   
       @keyframes growDown {
@@ -160,6 +159,7 @@
     nav {
 
     .menu-wrapper {
+
       /* menu btn */
       .menu-btn {
         &:checked ~ ul {
@@ -188,7 +188,7 @@
         cursor: pointer;
         display: block;
         float: right;
-        padding: 22px 16px;
+        padding: 16px 16px;
         position: relative;
         user-select: none;
 
@@ -196,10 +196,10 @@
           background: green;
           background: red;
           display: block;
-          height: 3px;
+          height: 2px;
           position: relative;
           transition: background .2s ease-out;
-          width: 30px;
+          width: 24px;
         }
 
         .navicon:before,
@@ -222,22 +222,27 @@
         }
       }
 
-        .dropdown_menu {
-          left: 40vw;
-          top: -10px;
+        .dropdown-menu {
+          left: 48vw;
+          top: -7px;
 
           li a {
             padding: 10px 5px;
           }
         }
-  
+
         ul {
           display: none;
         }
 
         li {
           float: none;
-          padding: 30px 20px;
+          padding: 15px 10px;
+
+          a {
+            padding: 12px 5px !important;
+            width: 50vw;
+          }
         }
 
         ul li ul {
@@ -254,8 +259,8 @@
           max-height: 0;
           overflow: visible;
           position: absolute;
-          top: 48px;
-          width: 40vw;
+          top: 38px;
+          width: 48vw;
         }
       }
     }
