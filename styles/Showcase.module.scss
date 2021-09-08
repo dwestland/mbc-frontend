@@ -2,12 +2,12 @@
   // TODO: More text shadow
 
   background: #000 url('/images/mybeachcams.jpg') no-repeat center center / cover;
-  margin-top: 60px;
+  margin-top: 38px;
   text-shadow: 1px 1px 1px rgb(75, 75, 75);
 }
 
 .container {
-  border: 1px solid green;
+  // border: 1px solid green;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -25,12 +25,12 @@
 
 .logo {
   font-size: 50px;
-  margin-top: -24px;
+  margin-top: 0px;
 }
 
 .subHeading {
   font-size: 32px;
-  margin: 5px 0 0px;
+  margin: 5px 0 20px;
 }
 
 @media (max-width: 600px) {
