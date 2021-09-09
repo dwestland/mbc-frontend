@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Navbar from './Navbar'
-// import Header from './Header'
+import Header from './Header'
 import { useRouter } from 'next/router'
 import Footer from './Footer'
 import Showcase from './Showcase'
@@ -20,12 +20,12 @@ export default function Layout({ title, keywords, description, children }) {
       <div className={styles.body}>
 
         <Navbar  />
-        {/** TODO: Convert to Admin menu:
-          <Header />
-         */}
-         
+
         <Showcase />
         <div className={styles.container}>
+          {/** TODO: Convert Header to AdminMenu:
+          */}
+          <Header />
          {/**
           <Breadcrumbs useDefaultStyle rootLabel='Home' />
          */}

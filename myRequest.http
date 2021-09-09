@@ -1,8 +1,8 @@
 
-GET http://localhost:1337/cams?slug=st-regis-princeville-cam
+GET http://localhost:1337/cams?slug=st.-regis-princeville-cam
 
 ###
-GET http://localhost:1337/cams?id=2
+GET http://localhost:1337/cams?id=1607
 
 
 ###
@@ -13,3 +13,9 @@ GET http://localhost:1337/cams
 GET http://localhost:1337/cams?title_contains=regis
 
 
+### Pagination
+GET http://localhost:1337/cams?_limit=3&_start=3
+
+
+### Count
+GET http://localhost:1337/cams/count
