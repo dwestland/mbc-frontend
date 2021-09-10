@@ -1,4 +1,4 @@
-// import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
+import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
 // import { useContext } from 'react'
 import Link from 'next/link'
 import Search from './Search'
@@ -30,8 +30,7 @@ export default function Header() {
               <a>Add Cam</a>
             </Link>
           </li>
-        </ul>
-      </nav>
+
       {/*
 
   <nav>
@@ -74,6 +73,15 @@ export default function Header() {
     </ul>
   </nav>
 */}
+          <li>
+            <Link href='/account/login'>
+              <a className='btn-secondary btn-icon'>
+                <FaSignInAlt /> Login
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </header>
   )
 }
