@@ -5,7 +5,7 @@ import { API_URL, PER_PAGE } from '@/config/index'
 import { FaCreativeCommonsRemix } from 'react-icons/fa'
 
 export default function CamsPage({ cams, page, total }) {
-  
+
   return (
     <Layout>
       <h1>Cams</h1>
@@ -23,7 +23,7 @@ export default function CamsPage({ cams, page, total }) {
 }
 
 export async function getServerSideProps({query: {page = 1}}) {
-  const start = +page === 1 ? 0 : (+page -1) * PER_PAGE
+  const start = +page === 1 ? 0 : (+page - 1) * PER_PAGE
 
   // Fetch total/count
   const totalRes = await fetch(
@@ -34,7 +34,6 @@ export async function getServerSideProps({query: {page = 1}}) {
   // Fetch cams
   const camRes = await fetch(`${API_URL}/cams?_limit=${PER_PAGE}&_start=${start}`)
   const cams = await camRes.json()
-
 
   return {
     props: { cams, page: +page, total },
