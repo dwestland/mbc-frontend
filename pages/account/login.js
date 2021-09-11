@@ -4,21 +4,20 @@ import 'react-toastify/dist/ReactToastify.css'
 import { useState, useEffect, useContext } from 'react'
 import Link from 'next/link'
 import Layout from '@/components/Layout'
-// import AuthContext from '@/context/AuthContext'
+import AuthContext from '@/context/AuthContext'
 import styles from '@/styles/AuthForm.module.css'
 
 export default function login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  // const { login, error } = useContext(AuthContext)
+  const { login, error } = useContext(AuthContext)
 
   // useEffect(() => error && toast.error(error))
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('%c email, password ', 'background: red; color: white', email, password)
-    // login({ email, password })
+    login({ email, password })
   }
 
   return (

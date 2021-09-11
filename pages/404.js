@@ -8,9 +8,9 @@ export default function NotFoundPage() {
     <Layout title='Page Not Found'>
       <div className={styles.error}>
         <h1>
-          <FaExclamationTriangle /> 404 Error
+          <FaExclamationTriangle /> Page not Found
         </h1>
-        <h4>Page not Found</h4>
+        <h4>404 Error</h4>
         <Link href='/'>Go Back Home</Link>
       </div>
     </Layout>

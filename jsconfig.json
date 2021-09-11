@@ -4,8 +4,8 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/styles/*": ["styles/*"],
-      "@/config/*": ["config/*"]
-      // "@/context/*": ["context/*"],
+      "@/config/*": ["config/*"],
+      "@/context/*": ["context/*"],
       // "@/helpers/*": ["helpers/*"]
     }
   }

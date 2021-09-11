@@ -1,18 +1,27 @@
+import React, { useContext } from 'react'
 import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
-// import { useContext } from 'react'
 import Link from 'next/link'
 import Search from './Search'
-// import AuthContext from '@/context/AuthContext'
+import AuthContext from '@/context/AuthContext'
 import styles from '@/styles/Header.module.scss'
 
 export default function Header() {
-  // const { user, logout } = useContext(AuthContext)
+  const { user, logout } = useContext(AuthContext)
 
   return (
     <header className={styles.header}>
+      <strong>
+        Admin Panel 
+        {user?
+          <React.Fragment>
+            - Hello {user.name}
+          </React.Fragment> :
+          null
+        }
+      </strong>
       <div className={styles.logo}>
         <Link href='/'>
-          <a>MBC</a>
+          <a>Home</a>
         </Link>
       </div>
 
@@ -26,59 +35,35 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href='/cams/add'>
-              <a>Add Cam</a>
-            </Link>
-          </li>
-
-      {/*
-
-  <nav>
-    <ul>
-      <li>
-        <Link href='/events'>
-          <a>Events</a>
-        </Link>
-      </li>
-      {user ? (
-        // If logged in
-        <>
-
-          <li>
-            <Link href='/account/dashboard'>
-              <a>Dashboard</a>
-            </Link>
-          </li>
-          <li>
-            <button
-              onClick={() => logout()}
-              className='btn-secondary btn-icon'
-            >
-              <FaSignOutAlt /> Logout
-            </button>
-          </li>
-        </>
-      ) : (
-        // If logged out
-        <>
-          <li>
-            <Link href='/account/login'>
-              <a className='btn-secondary btn-icon'>
-                <FaSignInAlt /> Login
-              </a>
-            </Link>
-          </li>
-        </>
-      )}
-    </ul>
-  </nav>
-*/}
-          <li>
-            <Link href='/account/login'>
-              <a className='btn-secondary btn-icon'>
-                <FaSignInAlt /> Login
-              </a>
-            </Link>
+          {user ? (
+            // If logged in
+            <React.Fragment>
+              <li>
+                <Link href='/account/dashboard'>
+                  <a>Dashboard</a>
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={() => logout()}
+                  className='btn-secondary btn-icon'
+                >
+                  <FaSignOutAlt /> Logout
+                </button>
+              </li>
+            </React.Fragment>
+          ) : (
+            // If logged out
+            <React.Fragment>
+              <li>
+                <Link href='/account/login'>
+                  <a className='btn-secondary btn-icon'>
+                    <FaSignInAlt /> Login
+                  </a>
+                </Link>
+              </li>
+            </React.Fragment>
+          )}
           </li>
         </ul>
       </nav>
