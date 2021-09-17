@@ -193,9 +193,11 @@ export default function EditCamPage({ cam }) {
   )
 }
 
-export async function getServerSideProps({ params: {id} }) {
+export async function getServerSideProps({ params: {id}, req }) {
   const res = await fetch(`${API_URL}/cams/${id}`)
   const cam = await res.json()
+
+  console.log('%c req.headers.cookie ', 'background: red; color: white', req.headers.cookie)
 
   return {
     props: {

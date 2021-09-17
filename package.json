@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^7.4.6",
+    "cookie": "^0.4.1",
     "next": "11.0.1",
     "nextjs-breadcrumbs": "^1.1.6",
     "qs": "^6.10.1",
