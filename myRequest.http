@@ -19,3 +19,6 @@ GET http://localhost:1337/cams?_limit=3&_start=3
 
 ### Count
 GET http://localhost:1337/cams/count
+
+### Login
+GET http://localhost:3000/api/login

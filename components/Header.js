@@ -24,9 +24,7 @@ export default function Header() {
           <a>Home</a>
         </Link>
       </div>
-
       <Search />
-      
       <nav>
         <ul>
           <li>
@@ -34,7 +32,6 @@ export default function Header() {
               <a>Cams</a>
             </Link>
           </li>
-          <li>
           {user ? (
             // If logged in
             <React.Fragment>
@@ -64,7 +61,6 @@ export default function Header() {
               </li>
             </React.Fragment>
           )}
-          </li>
         </ul>
       </nav>
     </header>

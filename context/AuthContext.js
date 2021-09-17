@@ -37,26 +37,28 @@ export const AuthProvider = ({ children }) => {
   // Login user
   const login = async ({ email: identifier, password }) => {
     console.log('%c identifier, password ', 'background: red; color: white', identifier, password)
-    // const res = await fetch(`${NEXT_URL}/api/login`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     identifier,
-    //     password,
-    //   }),
-    // })
+    const res = await fetch(`${NEXT_URL}/api/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        identifier,
+        password,
+      }),
+    })
 
-    // const data = await res.json()
+    const data = await res.json()
 
-    // if (res.ok) {
-    //   setUser(data.user)
-    //   router.push('/account/dashboard')
-    // } else {
-    //   setError(data.message)
-    //   setError(null)
-    // }
+    console.log('%c data ', 'background: red; color: white', data)
+
+    if (res.ok) {
+      setUser(data.user)
+      // router.push('/account/dashboard')
+    } else {
+      setError(data.message)
+      setError(null)
+    }
   }
 
   // Logout user
