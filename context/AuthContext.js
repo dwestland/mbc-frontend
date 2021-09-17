@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   const router = useRouter()
 
-  // useEffect(() => checkUserLoggedIn(), [])
+  useEffect(() => checkUserLoggedIn(), [])
 
   // Register user
   const register = async (user) => {
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
 
     if (res.ok) {
       setUser(data.user)
-      // router.push('/account/dashboard')
+      router.push('/account/dashboard')
     } else {
       setError(data.message)
       setError(null)
@@ -76,15 +76,14 @@ export const AuthProvider = ({ children }) => {
 
   // Check if user is logged in
   const checkUserLoggedIn = async (user) => {
-    console.log('%c Check ', 'background: red; color: white', )
-    // const res = await fetch(`${NEXT_URL}/api/user`)
-    // const data = await res.json()
+    const res = await fetch(`${NEXT_URL}/api/user`)
+    const data = await res.json()
 
-    // if (res.ok) {
-    //   setUser(data.user)
-    // } else {
-    //   setUser(null)
-    // }
+    if (res.ok) {
+      setUser(data.user)
+    } else {
+      setUser(null)
+    }
   }
 
   return (
