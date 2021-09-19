@@ -31,9 +31,9 @@
   border-radius: .25rem;
   border: none;
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
-  // display: flex;
+  display: flex;
   flex-direction: column;
-  // margin: 20px;
+  margin: 0px 10px 20px;
   min-width: 0;
   padding: 10px;
   position: relative;
@@ -47,11 +47,13 @@
     h4 {
       font-size: 1.6em;
       font-weight: 400;
-      margin-bottom: .3em;
+      margin-top: 5px;
+      margin-bottom: 5px;
     }
   }
 
   .footer {
-    background: var(--lightest-olive); 
+    background: var(--lightest-olive);
+    margin-top: auto;
   }
 }

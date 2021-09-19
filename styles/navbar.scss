@@ -51,6 +51,7 @@
       }
   
       li {
+        margin-left: 40px;
 
         a {
           padding: 10px 5px 10px 10px;
@@ -64,7 +65,7 @@
   
       ul {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         margin: 0;
         padding: 0;
       }
@@ -115,6 +116,7 @@
         background-color: var(--light-seafoam);
         color: #fff;
         display: none;
+        margin-left: 0px;
         opacity: 0;
       }
       
@@ -145,6 +147,23 @@
         100% {
           transform: scaleY(1);
         }
+      }
+    }
+  }
+}
+
+/* Medium menu */
+@media (max-width: 991.98px) {
+  .navbar nav {
+    background: blue;
+    .menu-wrapper {
+
+      ul {
+        justify-content: space-evenly;
+      }
+
+      li {
+        margin-left: 0px;
       }
     }
   }
