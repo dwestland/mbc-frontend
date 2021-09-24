@@ -20,7 +20,7 @@ export default function Navbar() {
                 Hawaii Beach Cams
               </span>
               <ul className="dropdown-menu dropdown-menu--animated">
-                <li><Link href="/hawaii/"><a>Hawaii</a></Link></li>
+                <li><Link><a>Hawaii</a></Link></li>
                 <li><Link href="/hawaii/kauai/"><a>Kauai</a></Link></li>
                 <li><Link href="/hawaii/oahu/"><a>Oahu</a></Link></li>
                 <li><Link href="/hawaii/maui/"><a>Maui</a></Link></li>
