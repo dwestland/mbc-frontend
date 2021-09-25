@@ -1,6 +1,7 @@
 .navbar {
-  background-color: pink;
+  background-color: var(--dark-seafoam);
   box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+  font-weight: 500;
   margin: 0;
   padding: 0;
   position: fixed;
@@ -18,14 +19,14 @@
   }
 
   nav {
-    background: lightgray;
+    background-color: none;
     height: 100%;
     margin: 0 auto;
     max-width: 1200px;
 
     .logo {
       align-items: center;
-      background: lightblue;
+      background-color: none;
       display: flex;
       float: left;
       font-size: 16px;
@@ -76,7 +77,7 @@
       }
 
       .dropdown {
-        background: var(--seafoam);
+        background-color: none;
         color: #fff;
         cursor: default;
         display: flex;
@@ -85,7 +86,7 @@
       }
   
       .dropdown:hover {
-        background: var(--dark-seafoam);
+        background: var(--darker-seafoam);
       }
   
       .dropdown:hover .dropdown-menu li {
@@ -113,15 +114,28 @@
       }
   
       .dropdown-menu li {
-        background-color: var(--light-seafoam);
-        color: #fff;
+        background-color: var(--lighter-seafoam);
         display: none;
         margin-left: 0px;
         opacity: 0;
+
+        a {
+          color: var(--darker-seafoam);
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+
+      .dropdown-menu li:first-child {
+        a {
+          font-weight: 800;
+        }
       }
       
       .dropdown-menu li:hover {
-        background-color: var(--seafoam);
+        background-color: var(--darker-seafoam);
       }
       
       .dropdown:hover .dropdown-menu--animated {
@@ -155,9 +169,7 @@
 /* Medium menu */
 @media (max-width: 991px) {
   .navbar nav {
-    background: blue;
     .menu-wrapper {
-
       ul {
         justify-content: space-evenly;
       }
@@ -178,6 +190,10 @@
     nav {
 
     .menu-wrapper {
+
+      .dropdown {
+        background-color: var(--dark-seafoam);
+      }
 
       /* menu btn */
       .menu-btn {
@@ -212,8 +228,7 @@
         user-select: none;
 
         .navicon {
-          background: green;
-          background: red;
+          background: #fff;
           display: block;
           height: 2px;
           position: relative;
@@ -223,7 +238,7 @@
 
         .navicon:before,
         .navicon:after {
-          background: green;
+          background: #fff;
           content: '';
           display: block;
           height: 100%;
