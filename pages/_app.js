@@ -4,7 +4,7 @@ import '@/styles/base.scss'
 import '@/styles/globals.scss'
 import '@/styles/navbar.scss'
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   return (
     <AuthProvider>
       <Component {...pageProps} />
