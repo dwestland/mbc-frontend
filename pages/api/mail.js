@@ -4,7 +4,6 @@ import mail from '@sendgrid/mail'
 
 mail.setApiKey(process.env.SENDGRID_API_KEY)
 
-
 export default function init(req, res) {
   const body = JSON.parse(req.body)
 
@@ -16,9 +15,9 @@ export default function init(req, res) {
 
   const data = {
     to: 'don@westland.net',
-    from: 'admin@westland.net',
-    subject: 'MyBeacCams.com Message',
-    text: message
+    from: 'postmaster@westland.net',
+    subject: `MyBeachCams Message from ${body.name}`,
+    text: message,
   }
 
   mail.send(data)

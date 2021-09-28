@@ -6,7 +6,7 @@ import Footer from './Footer'
 import Showcase from './Showcase'
 import styles from '../styles/Layout.module.scss'
 // import Breadcrumbs from 'nextjs-breadcrumbs'
-import 'nextjs-breadcrumbs/dist/index.css'
+// import 'nextjs-breadcrumbs/dist/index.css'
 
 export default function Layout({ title, keywords, description, children }) {
   const router = useRouter()
@@ -15,25 +15,23 @@ export default function Layout({ title, keywords, description, children }) {
     <div>
       <Head>
         <title>{title}</title>
-        <meta name='description' content={description} />
+        <meta name="description" content={description} />
       </Head>
       <div className={styles.body}>
-
-        <Navbar  />
+        <Navbar />
 
         <Showcase />
         <div className={styles.container}>
           {/** TODO: Convert Header to AdminMenu:
-          */}
+           */}
           <Header />
-         {/**
+          {/**
           <Breadcrumbs useDefaultStyle rootLabel='Home' />
          */}
           {children}
         </div>
 
         <Footer />
-
       </div>
     </div>
   )
@@ -43,5 +41,6 @@ export default function Layout({ title, keywords, description, children }) {
 
 Layout.defaultProps = {
   title: 'MyBeachCams.com - Webcams of Hawaii, Florida and California',
-  description: 'Best Web Cams and Surf Cams in Hawaii, Florida and California and and local information about Maui, Los Angles, Miami, Oahu, San Francisco, Kauai and Fort Lauderdale',
+  description:
+    'Best Web Cams and Surf Cams in Hawaii, Florida and California and and local information about Maui, Los Angles, Miami, Oahu, San Francisco, Kauai and Fort Lauderdale',
 }
