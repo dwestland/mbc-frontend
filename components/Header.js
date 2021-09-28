@@ -7,14 +7,15 @@ import styles from '@/styles/Header.module.scss'
 
 export default function Header() {
   const { user, logout } = useContext(AuthContext)
+  console.log('%c user ', 'background: red; color: white', user)
 
   return (
     <header className={styles.header}>
       <strong>
-        Admin Panel 
+        ADMIN - Hey
         {user?
           <React.Fragment>
-            - Hello {user.name}
+            &nbsp;&nbsp;{user.username}
           </React.Fragment> :
           null
         }
