@@ -29,19 +29,35 @@ POST http://localhost:1337/auth/local HTTP/1.1
 Content-Type: application/json
 
 {
-"identifier": "don@westland.net",
+"identifier": "joe@gmail.com",
 "password": "Password1"
 }
 
 ### Get user cams
 GET http://localhost:1337/cams/me/ HTTP/1.1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjMyNjgyODQ5LCJleHAiOjE2MzUyNzQ4NDl9.NTCBZ2L-w9rKMT2WyDYrIXtVWP7NmWj1MAXuZCjE3rc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjMzMjE0NTQ4LCJleHAiOjE2MzU4MDY1NDh9.KwaR4Ksyn-8ETLZiHbJDQTku8bMPeVc52qT5tILZ26I
+
+
+### Add new cam
+POST http://localhost:1337/cams HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjMzMjE0NTQ4LCJleHAiOjE2MzU4MDY1NDh9.KwaR4Ksyn-8ETLZiHbJDQTku8bMPeVc52qT5tILZ26I
+
+{
+    "title": "My new title2",
+    "url": "https://www.westland.net/",
+    "description": "My description",
+    "country": "US",
+    "state": "HI",
+    "area": "Las Vegas",
+    "sub_area": "Princeville"
+}
+
+
 
 
 ///////////////// Next API /////////////////////
-
-
 // TODO: Getting 403 error with message: "Not Authorized"
 
 ### Login

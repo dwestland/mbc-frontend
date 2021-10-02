@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styles from '../styles/Footer.module.scss'
 // import styles from '@/styles/Footer.module.scss'
 
-export default function Footer() {
+const Footer = () => {
   let year = new Date().getFullYear()
 
   return (
@@ -16,3 +16,5 @@ export default function Footer() {
     </footer>
   )
 }
+
+export default Footer

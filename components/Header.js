@@ -13,15 +13,12 @@ export default function Header() {
     <header className={styles.header}>
       <strong>
         ADMIN - Hey
-        {user?
-          <React.Fragment>
-            &nbsp;&nbsp;{user.username}
-          </React.Fragment> :
-          null
-        }
+        {user ? (
+          <React.Fragment>&nbsp;&nbsp;{user.username}</React.Fragment>
+        ) : null}
       </strong>
       <div className={styles.logo}>
-        <Link href='/'>
+        <Link href="/">
           <a>Home</a>
         </Link>
       </div>
@@ -29,7 +26,7 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <Link href='/cams'>
+            <Link href="/cams">
               <a>Cams</a>
             </Link>
           </li>
@@ -37,14 +34,19 @@ export default function Header() {
             // If logged in
             <React.Fragment>
               <li>
-                <Link href='/account/dashboard'>
+                <Link href="/account/dashboard">
                   <a>Dashboard</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/cams/add">
+                  <a>Add</a>
                 </Link>
               </li>
               <li>
                 <button
                   onClick={() => logout()}
-                  className='btn-secondary btn-icon'
+                  className="btn-secondary btn-icon"
                 >
                   <FaSignOutAlt /> Logout
                 </button>
@@ -54,8 +56,8 @@ export default function Header() {
             // If logged out
             <React.Fragment>
               <li>
-                <Link href='/account/login'>
-                  <a className='btn-secondary btn-icon'>
+                <Link href="/account/login">
+                  <a className="btn-secondary btn-icon">
                     <FaSignInAlt /> Login
                   </a>
                 </Link>
