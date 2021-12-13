@@ -1,4 +1,4 @@
-// import { parseCookies } from '@/helpers/index'
+import { parseCookies } from '@/helpers/index'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useState } from 'react'
@@ -23,7 +23,7 @@ export default function AddCamPage({ token }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
+
     // Validation
     const hasEmptyFields = Object.values(values).some(
       (element) => element === ''
@@ -43,10 +43,10 @@ export default function AddCamPage({ token }) {
     })
 
     if (!res.ok) {
-      // if (res.status === 403 || res.status === 401) {
-      //   toast.error('No token included')
-      //   return
-      // }
+      if (res.status === 403 || res.status === 401) {
+        toast.error('No token included')
+        return
+      }
       toast.error('Something Went Wrong')
     } else {
       const cam = await res.json()
@@ -60,68 +60,68 @@ export default function AddCamPage({ token }) {
   }
 
   return (
-    <Layout title='Add New Cam'>
-      <Link href='/cams'>Go Back</Link>
+    <Layout title="Add New Cam">
+      <Link href="/cams">Go Back</Link>
       <h1>Add Cam</h1>
       <ToastContainer />
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.grid}>
           <div>
-            <label htmlFor='title'>Cam Title</label>
+            <label htmlFor="title">Cam Title</label>
             <input
-              type='text'
-              id='title'
-              name='title'
+              type="text"
+              id="title"
+              name="title"
               value={values.title}
               onChange={handleInputChange}
             />
           </div>
           <div>
-            <label htmlFor='url'>URL for Cam Site</label>
+            <label htmlFor="url">URL for Cam Site</label>
             <input
-              type='text'
-              name='url'
-              id='url'
+              type="text"
+              name="url"
+              id="url"
               value={values.url}
               onChange={handleInputChange}
             />
           </div>
           <div>
-            <label htmlFor='country'>Country</label>
+            <label htmlFor="country">Country</label>
             <input
-              type='text'
-              name='country'
-              id='country'
+              type="text"
+              name="country"
+              id="country"
               value={values.country}
               onChange={handleInputChange}
             />
           </div>
           <div>
-            <label htmlFor='state'>State</label>
+            <label htmlFor="state">State</label>
             <input
-              type='text'
-              name='state'
-              id='state'
+              type="text"
+              name="state"
+              id="state"
               value={values.state}
               onChange={handleInputChange}
             />
           </div>
           <div>
-            <label htmlFor='area'>Area - Example: Oahu</label>
+            <label htmlFor="area">Area - Example: Oahu</label>
             <input
-              type='area'
-              name='area'
-              id='area'
+              type="area"
+              name="area"
+              id="area"
               value={values.area}
               onChange={handleInputChange}
             />
           </div>
           <div>
-            <label htmlFor='sub_area'>Sub-area - Example: Waikiki Beach</label>
+            <label htmlFor="sub_area">Sub-area - Example: Waikiki Beach</label>
             <input
-              type='text'
-              name='sub_area'
-              id='sub_area'
+              type="text"
+              name="sub_area"
+              id="sub_area"
               value={values.sub_area}
               onChange={handleInputChange}
             />
@@ -129,17 +129,17 @@ export default function AddCamPage({ token }) {
         </div>
 
         <div>
-          <label htmlFor='description'>Cam Description</label>
+          <label htmlFor="description">Cam Description</label>
           <textarea
-            type='text'
-            name='description'
-            id='description'
+            type="text"
+            name="description"
+            id="description"
             value={values.description}
             onChange={handleInputChange}
           ></textarea>
         </div>
 
-        <input type='submit' value='Add Cam' className='btn' />
+        <input type="submit" value="Add Cam" className="btn" />
       </form>
     </Layout>
   )
